@@ -2,8 +2,8 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>´ÏÃ÷µÄÌìÆ½</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>èªæ˜çš„å¤©å¹³</title>
 <style type="text/css">
 <!--
 .style1 {color: #006699}
@@ -41,10 +41,10 @@
 	function createLog(left,right,stat,r){
 
 		var e=createEle("td");
-		e.appendChild(document.createTextNode("µÚ"+r+"´Î£º"+stat));
+		e.appendChild(document.createTextNode("ç¬¬"+r+"æ¬¡ï¼š"+stat));
 		var t=createEle("p");
 		t.style.color="#006699";
-		t.appendChild(document.createTextNode("ÌìÆ½×ó²à:"));
+		t.appendChild(document.createTextNode("å¤©å¹³å·¦ä¾§:"));
 		e.appendChild(t);
 		t=createEle("small");
 		t.appendChild(document.createTextNode(left));
@@ -52,7 +52,7 @@
 //		e.appendChild(createEle("br"));
 		t=createEle("p");
 		t.style.color="#006699";
-		t.appendChild(document.createTextNode("ÌìÆ½ÓÒ²à:"));
+		t.appendChild(document.createTextNode("å¤©å¹³å³ä¾§:"));
 		e.appendChild(t);
 		t=createEle("small");
 		t.appendChild(document.createTextNode(right));
@@ -102,16 +102,16 @@ e.appendChild(t);
 		    var reg = /^[-]?\d*\.?\d*$/;
 		    e = e.toString( );
 			if(!e.match(reg)){
-				alert("ÄãËùÊäÈëµÄÄÚÈİ²»ÊÇÒ»¸öÕûÊı");
+				alert("ä½ æ‰€è¾“å…¥çš„å†…å®¹ä¸æ˜¯ä¸€ä¸ªæ•´æ•°");
 				return;
 			}
 			var f=new Number(e);
 			if(f<3 || f> Number.MAX_VALUE ){
-				alert("ÄãËùÊäÈëµÄÓ¦¸ÃÊÇÒ»¸ö´óÓÚ3µÄÊı×Ö");
+				alert("ä½ æ‰€è¾“å…¥çš„åº”è¯¥æ˜¯ä¸€ä¸ªå¤§äº3çš„æ•°å­—");
 				return;
 			}
 			setBallsCount(f);
-			var txt="ÏÖÔÚ½«Çò±àºÅÎª£º1,2,.."+f+"¡£ÇëÔÚĞÄÖĞÑ¡ÔñÆäÖĞÒ»¸öÇò×÷ÎªÄÇ¿ÅÖÊÁ¿²»Ò»ÑùµÄÇò£¬²¢¼Ç×¡ËüµÄ±àºÅ£¬ÒÔ¼°Ëû±ÈÆäËûµÄÇòÖØ»¹ÊÇÇá¡£"
+			var txt="ç°åœ¨å°†çƒç¼–å·ä¸ºï¼š1,2,.."+f+"ã€‚è¯·åœ¨å¿ƒä¸­é€‰æ‹©å…¶ä¸­ä¸€ä¸ªçƒä½œä¸ºé‚£é¢—è´¨é‡ä¸ä¸€æ ·çš„çƒï¼Œå¹¶è®°ä½å®ƒçš„ç¼–å·ï¼Œä»¥åŠä»–æ¯”å…¶ä»–çš„çƒé‡è¿˜æ˜¯è½»ã€‚"
 			replaceInnerHTML("step3_count",txt);
 			hide("step2");
 			show("step3");
@@ -122,17 +122,17 @@ var round=0;
 	    var target = (evt.target) ? evt.target : evt.srcElement;
 		if(target.id=="tianpinleft"){
 round++;
-createLog(getBallsAt(1),getBallsAt(2),"×óÖØÓÒÇá",round);
+createLog(getBallsAt(1),getBallsAt(2),"å·¦é‡å³è½»",round);
 			tianpinStatus=1;
 			judge();
 		}else if(target.id=="tianpinright"){
 round++;
-createLog(getBallsAt(1),getBallsAt(2),"ÓÒÖØ×óÇá",round);
+createLog(getBallsAt(1),getBallsAt(2),"å³é‡å·¦è½»",round);
 			tianpinStatus=2;
 			judge();
 		}else if(target.id=="tianpinpinhen"){
 round++;
-createLog(getBallsAt(1),getBallsAt(2),"Æ½ºâ",round);
+createLog(getBallsAt(1),getBallsAt(2),"å¹³è¡¡",round);
 
 			tianpinStatus=0;
 			judge();
@@ -142,7 +142,7 @@ createLog(getBallsAt(1),getBallsAt(2),"Æ½ºâ",round);
 		var r=decide();
 		var e;
 		if(-1==r){
-			replaceInnerHTML("theanswer","ÎŞ½â");
+			replaceInnerHTML("theanswer","æ— è§£");
 			hide("tianpin");
 			hide("message");
 			show("showanswer");
@@ -173,7 +173,7 @@ createLog(getBallsAt(1),getBallsAt(2),"Æ½ºâ",round);
 	function tellFrieds(){
 		var e=document.getElementById("message");
 		if (e.style.display=="none"){
-			var s="ÅóÓÑ£¬ÕâÊÇÒ»¸öºÜÓĞÈ¤µÄÈË¹¤ÖÇÄÜ\n"+document.location.toString();
+			var s="æœ‹å‹ï¼Œè¿™æ˜¯ä¸€ä¸ªå¾ˆæœ‰è¶£çš„äººå·¥æ™ºèƒ½\n"+document.location.toString();
 			e.style.display="block";
 			e.value=s;
 			e.focus();
@@ -187,19 +187,19 @@ createLog(getBallsAt(1),getBallsAt(2),"Æ½ºâ",round);
 </script>
 <noscript>
 <p>
-<div align="center" style="color:red">±¾Ò³Ãæ±ØĞëÊ¹ÓÃjavascript²Å¿ÉÒÔÕıÈ·ÏÔÊ¾£¬µ«ÄãÄ¿Ç°µÄä¯ÀÀÆ÷ÉèÖÃ½ûÓÃ»ò×èÖ¹ÁËÊ¹ÓÃjavascript</div>
+<div align="center" style="color:red">æœ¬é¡µé¢å¿…é¡»ä½¿ç”¨javascriptæ‰å¯ä»¥æ­£ç¡®æ˜¾ç¤ºï¼Œä½†ä½ ç›®å‰çš„æµè§ˆå™¨è®¾ç½®ç¦ç”¨æˆ–é˜»æ­¢äº†ä½¿ç”¨javascript</div>
 </p>
 </noscript>
 <body>
 <div align="center">
 <form id="myform" name="myform" style="width:550px "><div align="left">
 	      <div id="step1" style="display:block ">
-        <div>ÔÚÒ»¶Ñ´óĞ¡ÏàÍ¬µÄÇòÖ®ÖĞ£¬ÓĞÒ»Ö»ÇòÓëÆäËûµÄÇòÖØÁ¿²»Í¬£¬ÏÖÓĞÒ»Ö»Ã»ÓĞíÀÂëµÄÌìÆ½£¬ÏÖÔÚÓÉÍæ¼ÒÀ´Éè¶¨ÕâĞ©Çò£¬»úÆ÷ÈË½«ÓÃÌìÆ½ÅĞ¶Ï³öÄÄÒ»Ö»ÇòÊÇÄÇÖ»²»Ò»ÑùµÄÇò¡£</div>
+        <div>åœ¨ä¸€å †å¤§å°ç›¸åŒçš„çƒä¹‹ä¸­ï¼Œæœ‰ä¸€åªçƒä¸å…¶ä»–çš„çƒé‡é‡ä¸åŒï¼Œç°æœ‰ä¸€åªæ²¡æœ‰ç ç çš„å¤©å¹³ï¼Œç°åœ¨ç”±ç©å®¶æ¥è®¾å®šè¿™äº›çƒï¼Œæœºå™¨äººå°†ç”¨å¤©å¹³åˆ¤æ–­å‡ºå“ªä¸€åªçƒæ˜¯é‚£åªä¸ä¸€æ ·çš„çƒã€‚</div>
         <div align="right">
-          <input type="button" name="button1" value="ÎÒÃ÷°×ÁË,¿ªÊ¼Íæ°É" onClick="toggleStep(event)">
+          <input type="button" name="button1" value="æˆ‘æ˜ç™½äº†,å¼€å§‹ç©å§" onClick="toggleStep(event)">
         </div>
 	    </div>
-		  <div id="step2" style="display:none"><p align="left">ÇëÍæ¼ÒÀ´Éè¶¨×ÜÇòÊı(½¨Òé²»Òª³¬¹ı1500¸öÇò):
+		  <div id="step2" style="display:none"><p align="left">è¯·ç©å®¶æ¥è®¾å®šæ€»çƒæ•°(å»ºè®®ä¸è¦è¶…è¿‡1500ä¸ªçƒ):
             <input id="txtCount" name="textfield" type="text" size="5">
           <input type="button" name="button2" value="OK"  style="width:80" onClick="setCount()"></p></div>
 	  <div id="step3" style="display:none">
@@ -208,31 +208,31 @@ createLog(getBallsAt(1),getBallsAt(2),"Æ½ºâ",round);
         <input type="button" name="button3" value="I am ready" onClick="onDecide(event)">
   </div>
     <div id="tianpin" style="display:none">
-      <p class="style1">ÌìÆ½×ó²à£º      	
+      <p class="style1">å¤©å¹³å·¦ä¾§ï¼š      	
       </p>
       <small><div id="onleft">a</div></small>
       <br>
-      <span class="style1">ÌìÆ½ÓÒ²à£º</span>		
+      <span class="style1">å¤©å¹³å³ä¾§ï¼š</span>		
       <small><div id="onright">a</div></small>
       <br> <div align="center">     
-    <input id="tianpinleft" type="button" name="Submit5" value="×óÖØÓÒÇá" onClick="onDecide(event)">
+    <input id="tianpinleft" type="button" name="Submit5" value="å·¦é‡å³è½»" onClick="onDecide(event)">
 &nbsp;&nbsp;
-    <input id="tianpinpinhen" type="button" name="Submit6" value="Æ½ºâ"  style="width:80" onClick="onDecide(event)">
+    <input id="tianpinpinhen" type="button" name="Submit6" value="å¹³è¡¡"  style="width:80" onClick="onDecide(event)">
 &nbsp;&nbsp;
-    <input id="tianpinright" type="button" name="Submit7" value="ÓÒÖØ×óÇá" onClick="onDecide(event)">
+    <input id="tianpinright" type="button" name="Submit7" value="å³é‡å·¦è½»" onClick="onDecide(event)">
     </div>
 </div>
     <div id="showanswer" style="display:none "><div id="theanswer" style="color:#006699 ">a</div><br>
 
       <p align="center">
-            <input name="playagain" type="button" value="ÔÙÕûÒ»¾ÖÍæÍæ" onClick="toggleStep(event)"/>
-			   &nbsp;&nbsp;<input type="button" value="¸æËßÅóÓÑ" onClick="tellFrieds()"></input>
+            <input name="playagain" type="button" value="å†æ•´ä¸€å±€ç©ç©" onClick="toggleStep(event)"/>
+			   &nbsp;&nbsp;<input type="button" value="å‘Šè¯‰æœ‹å‹" onClick="tellFrieds()"></input>
 			    <br>
       </p>
       <div align="center"> 
       <table id="copied" style="display:none " border="0">
 
-          <td bgcolor="#3399FF"><span class="style2">ÏÂÃæµÄÎÄ×ÖÒÑ¸´ÖÆµ½¼ôÇĞ°å</span></td>
+          <td bgcolor="#3399FF"><span class="style2">ä¸‹é¢çš„æ–‡å­—å·²å¤åˆ¶åˆ°å‰ªåˆ‡æ¿</span></td>
 
       </table>
 	  <br>
@@ -243,7 +243,7 @@ createLog(getBallsAt(1),getBallsAt(2),"Æ½ºâ",round);
 </div>
   </div></form>
   <br><br><br>
-		  <p align="center">×÷Õß£º<a href="http://blog.csdn.net/guileen">¹ğ½¡ĞÛ</a><br>
+		  <p align="center">ä½œè€…ï¼š<a href="http://blog.csdn.net/guileen">æ¡‚å¥é›„</a><br>
 	        <a href="mailto:guileen@gmail.com">guileen@gmail.com</a></p>
 </div>
 </body>

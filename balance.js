@@ -191,11 +191,11 @@ function getBallsAt(pos){
 function getAnswer(){
 	for(var i=0;i<ballsCount;i++){
 		if(ballsStatus[i] == 0){
-			return "´ð°¸ÊÇ"+(i+1)+"ºÅÇò";
+			return "ç­”æ¡ˆæ˜¯"+(i+1)+"å·çƒ";
 		}else if(ballsStatus[i] == 1||ballsStatus[i] == 4){
-			return "´ð°¸ÊÇ"+(i+1)+"ºÅÇò£¬²¢ÇÒ´ËÇòÊÇÖØÇò";
+			return "ç­”æ¡ˆæ˜¯"+(i+1)+"å·çƒï¼Œå¹¶ä¸”æ­¤çƒæ˜¯é‡çƒ";
 		}if(ballsStatus[i] == 2||ballsStatus[i] == 5){
-			return "´ð°¸ÊÇ"+(i+1)+"ºÅÇò£¬²¢ÇÒ´ËÇòÊÇÇáÇò";
+			return "ç­”æ¡ˆæ˜¯"+(i+1)+"å·çƒï¼Œå¹¶ä¸”æ­¤çƒæ˜¯è½»çƒ";
 		}
 	}
 	if(ret!=-1){
@@ -206,11 +206,11 @@ function showBalls(){
 	var e="";
 	for(var i=0;i<ballsCount;i++)
 		e=e+ballsStatus[i]+",";
-	println("×´Ì¬£º"+e);
+	println("çŠ¶æ€ï¼š"+e);
 	for(var i=0;i<3;i++){
 		e="";
 		for(var j=0;j<lenballs[i];j++)
 			e=e+balls[i][j]+",";
-		println("Î»ÖÃ"+i+"ÉÏ"+e);
+		println("ä½ç½®"+i+"ä¸Š"+e);
 	}
 }
